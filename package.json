@@ -10,7 +10,12 @@
     "lint": "eslint src/",
     "lint:fix": "eslint src/ --fix",
     "format": "prettier --write src/",
-    "format:check": "prettier --check src/"
+    "format:check": "prettier --check src/",
+    "galaxy:generate": "node src/galaxy-exporter.js generate 3",
+    "galaxy:export": "node src/galaxy-exporter.js export",
+    "galaxy:list": "node src/galaxy-exporter.js list",
+    "deploy": "./scripts/deploy.sh deploy -c 1",
+    "deploy:batch": "./scripts/deploy.sh batch"
   },
   "dependencies": {
     "cors": "^2.8.5",
@@ -19,10 +24,18 @@
     "uuid": "^9.0.0"
   },
   "devDependencies": {
-    "eslint": "^8.57.0",
-    "prettier": "^3.2.5"
+    "eslint": "^8.57.1",
+    "prettier": "^3.8.1"
   },
-  "keywords": ["watchface", "svg", "generator"],
+  "keywords": [
+    "watchface",
+    "svg",
+    "generator",
+    "galaxy-watch",
+    "wear-os",
+    "tizen",
+    "fastlane"
+  ],
   "author": "somnal-dev",
   "license": "MIT",
   "engines": {
