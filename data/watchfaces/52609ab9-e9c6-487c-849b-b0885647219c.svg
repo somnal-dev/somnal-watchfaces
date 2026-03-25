@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 450" width="450" height="450">
+  <defs>
+    
+  </defs>
+  <rect width="450" height="450" fill="#ff6b35"/>
+  
+      <defs>
+        <linearGradient id="sunsetGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#ff6b35"/>
+          <stop offset="50%" stop-color="#f7931e"/>
+          <stop offset="100%" stop-color="#ffd93d"/>
+        </linearGradient>
+        <radialGradient id="sunGradient" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#fff3b0"/>
+          <stop offset="70%" stop-color="#ffd93d"/>
+          <stop offset="100%" stop-color="transparent"/>
+        </radialGradient>
+        <linearGradient id="horizonGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#ffd93d" stop-opacity="0.8"/>
+          <stop offset="100%" stop-color="#f7931e" stop-opacity="0.6"/>
+        </linearGradient>
+      </defs>
+      
+      <!-- Sunset sky -->
+      <rect width="450" height="450" fill="url(#sunsetGradient)"/>
+      
+      <!-- Sun -->
+      <circle cx="225" cy="350" r="80" fill="url(#sunGradient)"/>
+      <circle cx="225" cy="350" r="50" fill="#fff3b0" opacity="0.9"/>
+      
+      <!-- Sun rays -->
+      <line x1="280" y1="350" x2="325" y2="350" stroke="#fff3b0" stroke-width="2" opacity="0.4"/>
+      <line x1="272.6313972081441" y1="377.5" x2="311.6025403784439" y2="400" stroke="#fff3b0" stroke-width="2" opacity="0.4"/>
+      <line x1="252.5" y1="397.6313972081441" x2="275" y2="436.60254037844385" stroke="#fff3b0" stroke-width="2" opacity="0.4"/>
+      <line x1="225" y1="405" x2="225" y2="450" stroke="#fff3b0" stroke-width="2" opacity="0.4"/>
+      <line x1="197.5" y1="397.6313972081441" x2="175.00000000000003" y2="436.6025403784439" stroke="#fff3b0" stroke-width="2" opacity="0.4"/>
+      <line x1="177.36860279185586" y1="377.5" x2="138.39745962155612" y2="400" stroke="#fff3b0" stroke-width="2" opacity="0.4"/>
+      <line x1="170" y1="350" x2="125" y2="350" stroke="#fff3b0" stroke-width="2" opacity="0.4"/>
+      <line x1="177.3686027918559" y1="322.5" x2="138.39745962155615" y2="300" stroke="#fff3b0" stroke-width="2" opacity="0.4"/>
+      <line x1="197.49999999999997" y1="302.3686027918559" x2="174.99999999999994" y2="263.39745962155615" stroke="#fff3b0" stroke-width="2" opacity="0.4"/>
+      <line x1="225" y1="295" x2="224.99999999999997" y2="250" stroke="#fff3b0" stroke-width="2" opacity="0.4"/>
+      <line x1="252.5" y1="302.3686027918559" x2="275" y2="263.39745962155615" stroke="#fff3b0" stroke-width="2" opacity="0.4"/>
+      <line x1="272.6313972081441" y1="322.5" x2="311.60254037844385" y2="299.99999999999994" stroke="#fff3b0" stroke-width="2" opacity="0.4"/>
+      
+      <!-- Horizon line -->
+      <rect x="0" y="380" width="450" height="70" fill="url(#horizonGradient)" opacity="0.5"/>
+      <line x1="0" y1="385" x2="450" y2="385" stroke="#fff3b0" stroke-width="1" opacity="0.6"/>
+      
+      <!-- Clouds -->
+      <g opacity="0.4">
+        <ellipse cx="100" cy="80" rx="60" ry="25" fill="#fff3b0"/>
+        <ellipse cx="140" cy="75" rx="40" ry="20" fill="#fff3b0"/>
+        <ellipse cx="350" cy="120" rx="50" ry="22" fill="#fff3b0"/>
+        <ellipse cx="320" cy="115" rx="35" ry="18" fill="#fff3b0"/>
+      </g>
+      
+      <!-- Clock face (semi-transparent) -->
+      <circle cx="225" cy="180" r="120" fill="rgba(255,255,255,0.15)" stroke="#fff3b0" stroke-width="2"/>
+      <circle cx="225" cy="180" r="110" fill="none" stroke="#fff3b0" stroke-width="1" opacity="0.4"/>
+      
+      <!-- Hour markers -->
+      <line x1="225" y1="75" x2="225" y2="85" 
+                       stroke="#fff3b0" stroke-width="3" stroke-linecap="round"
+                       opacity="1"/>
+      <line x1="277.5" y1="89.06733260263395" x2="272.5" y2="97.72758664047834" 
+                       stroke="#fff3b0" stroke-width="1.5" stroke-linecap="round"
+                       opacity="0.6"/>
+      <line x1="315.93266739736606" y1="127.5" x2="307.2724133595217" y2="132.5" 
+                       stroke="#fff3b0" stroke-width="1.5" stroke-linecap="round"
+                       opacity="0.6"/>
+      <line x1="330" y1="180" x2="320" y2="180" 
+                       stroke="#fff3b0" stroke-width="3" stroke-linecap="round"
+                       opacity="1"/>
+      <line x1="315.93266739736606" y1="232.5" x2="307.2724133595217" y2="227.5" 
+                       stroke="#fff3b0" stroke-width="1.5" stroke-linecap="round"
+                       opacity="0.6"/>
+      <line x1="277.5" y1="270.93266739736606" x2="272.5" y2="262.2724133595217" 
+                       stroke="#fff3b0" stroke-width="1.5" stroke-linecap="round"
+                       opacity="0.6"/>
+      <line x1="225" y1="285" x2="225" y2="275" 
+                       stroke="#fff3b0" stroke-width="3" stroke-linecap="round"
+                       opacity="1"/>
+      <line x1="172.50000000000003" y1="270.93266739736606" x2="177.50000000000003" y2="262.2724133595217" 
+                       stroke="#fff3b0" stroke-width="1.5" stroke-linecap="round"
+                       opacity="0.6"/>
+      <line x1="134.06733260263394" y1="232.5" x2="142.7275866404783" y2="227.5" 
+                       stroke="#fff3b0" stroke-width="1.5" stroke-linecap="round"
+                       opacity="0.6"/>
+      <line x1="120" y1="180" x2="130" y2="180" 
+                       stroke="#fff3b0" stroke-width="3" stroke-linecap="round"
+                       opacity="1"/>
+      <line x1="134.06733260263394" y1="127.49999999999999" x2="142.72758664047834" y2="132.5" 
+                       stroke="#fff3b0" stroke-width="1.5" stroke-linecap="round"
+                       opacity="0.6"/>
+      <line x1="172.49999999999994" y1="89.06733260263395" x2="177.49999999999994" y2="97.72758664047835" 
+                       stroke="#fff3b0" stroke-width="1.5" stroke-linecap="round"
+                       opacity="0.6"/>
+      
+      <!-- Clock hands (centered at 180) -->
+      <g>
+        
+            <line cx="225" cy="180" x1="225" y1="180" 
+                  x2="262.1572412738697" 
+                  y2="146.5434696820571" 
+                  stroke="#fff3b0" stroke-width="6" stroke-linecap="round"/>
+            <line cx="225" cy="180" x1="225" y1="180" 
+                  x2="179.7247154342678" 
+                  y2="233.38678307869816" 
+                  stroke="#fff3b0" stroke-width="3" stroke-linecap="round"/>
+            <line cx="225" cy="180" x1="225" y1="180" 
+                  x2="141.85745393762653" 
+                  y2="197.67249371950953" 
+                  stroke="#ff4500" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="225" cy="180" r="6" fill="#ff4500"/>
+          
+      </g>
+    
+</svg>

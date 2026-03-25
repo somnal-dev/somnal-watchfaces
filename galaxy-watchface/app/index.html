@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Somnal Watchface</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Main Watchface Container -->
+  <div id="watchface" class="watchface">
+    <!-- Background Layer -->
+    <div class="background-layer"></div>
+    
+    <!-- Markers Layer -->
+    <div class="markers-layer">
+      <div class="hour-markers"></div>
+    </div>
+    
+    <!-- Complications Layer -->
+    <div class="complications">
+      <div class="complication top" id="complication-top">
+        <span class="complication-value" id="date-display">--</span>
+      </div>
+      <div class="complication left" id="complication-left">
+        <span class="complication-icon">🔋</span>
+        <span class="complication-value" id="battery-display">--</span>
+      </div>
+      <div class="complication right" id="complication-right">
+        <span class="complication-icon">👟</span>
+        <span class="complication-value" id="steps-display">--</span>
+      </div>
+      <div class="complication bottom" id="complication-bottom">
+        <span class="complication-icon">❤️</span>
+        <span class="complication-value" id="heartrate-display">--</span>
+      </div>
+    </div>
+    
+    <!-- Main Time Display -->
+    <div class="time-display">
+      <div class="hours" id="hours">00</div>
+      <div class="time-separator">:</div>
+      <div class="minutes" id="minutes">00</div>
+    </div>
+    
+    <!-- Seconds Display -->
+    <div class="seconds-display" id="seconds">
+      :00
+    </div>
+    
+    <!-- AM/PM Indicator -->
+    <div class="ampm-display" id="ampm">AM</div>
+    
+    <!-- Analog Clock Hands (Optional) -->
+    <div class="analog-display" id="analog-display" style="display: none;">
+      <div class="hand hour-hand" id="hour-hand"></div>
+      <div class="hand minute-hand" id="minute-hand"></div>
+      <div class="hand second-hand" id="second-hand"></div>
+      <div class="center-dot"></div>
+    </div>
+  </div>
+  
+  <script src="js/main.js"></script>
+</body>
+</html>

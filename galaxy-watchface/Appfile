@@ -1,0 +1,27 @@
+# Samsung Galaxy Store Configuration
+# 실제 배포 시 정현님이 직접 설정해야 합니다.
+
+# Samsung Seller Portal 정보
+# SELLER_ID: "YOUR_SELLER_ID"  # Samsung Seller Portal에서 확인
+# ACCESS_TOKEN: "YOUR_ACCESS_TOKEN"  # API 인증 토큰
+
+# 패키지 정보
+package_name "com.somnal.watchface"
+
+# Galaxy Store 트랙
+# production: 정식 배포
+# beta: 베타 테스트
+default_track "production"
+
+# 앱 정보
+app_name "Somnal Watchface"
+app_description "Custom watchface collection for Galaxy Watch"
+
+# 개발자 정보
+# developer_email "your-email@example.com"
+# developer_name "Somnal"
+
+# 주의사항:
+# - SELLER_ID와 ACCESS_TOKEN은 절대 Git에 커밋하지 마세요
+# - .env 파일로 관리하거나 환경 변수로 설정하세요
+# - Fastlane Match를 사용하여 인증서 관리 권장

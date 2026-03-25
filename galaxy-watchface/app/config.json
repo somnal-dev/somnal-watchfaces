@@ -1,0 +1,40 @@
+{
+  "watchface": {
+    "name": "Somnal Watchface",
+    "version": "1.0.0",
+    "author": "Somnal"
+  },
+  "settings": {
+    "showSeconds": true,
+    "showDate": true,
+    "showBattery": true,
+    "showHeartRate": false,
+    "showSteps": false,
+    "use24Hour": true,
+    "updateInterval": 1000
+  },
+  "colors": {
+    "background": "#1a1a2e",
+    "primary": "#ffffff",
+    "accent": "#e94560",
+    "text": "#ffffff"
+  },
+  "complications": {
+    "top": {
+      "type": "date",
+      "visible": true
+    },
+    "left": {
+      "type": "battery",
+      "visible": true
+    },
+    "right": {
+      "type": "steps",
+      "visible": false
+    },
+    "bottom": {
+      "type": "heartrate",
+      "visible": false
+    }
+  }
+}

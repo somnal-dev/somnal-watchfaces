@@ -6,7 +6,11 @@
   "scripts": {
     "start": "node index.js",
     "dev": "node --watch index.js",
-    "test": "node src/generator.js"
+    "test": "node src/generator.js",
+    "lint": "eslint src/",
+    "lint:fix": "eslint src/ --fix",
+    "format": "prettier --write src/",
+    "format:check": "prettier --check src/"
   },
   "dependencies": {
     "cors": "^2.8.5",
@@ -14,7 +18,14 @@
     "express": "^4.18.2",
     "uuid": "^9.0.0"
   },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5"
+  },
   "keywords": ["watchface", "svg", "generator"],
   "author": "somnal-dev",
-  "license": "MIT"
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  }
 }

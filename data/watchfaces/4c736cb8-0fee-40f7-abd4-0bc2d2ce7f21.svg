@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 450" width="450" height="450">
+  <defs>
+    
+  </defs>
+  <rect width="450" height="450" fill="#001a33"/>
+  
+      <defs>
+        <linearGradient id="oceanGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#001a33"/>
+          <stop offset="50%" stop-color="#003366"/>
+          <stop offset="100%" stop-color="#0066cc"/>
+        </linearGradient>
+        <linearGradient id="waveGradient1" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#0066cc" stop-opacity="0.6"/>
+          <stop offset="100%" stop-color="#003366" stop-opacity="0.8"/>
+        </linearGradient>
+        <radialGradient id="bubbleGradient" cx="30%" cy="30%" r="70%">
+          <stop offset="0%" stop-color="#87ceeb" stop-opacity="0.8"/>
+          <stop offset="100%" stop-color="#0066cc" stop-opacity="0.3"/>
+        </radialGradient>
+        <filter id="waterBlur">
+          <feGaussianBlur stdDeviation="0.5"/>
+        </filter>
+      </defs>
+      
+      <!-- Ocean background -->
+      <rect width="450" height="450" fill="url(#oceanGradient)"/>
+      
+      <!-- Light rays from surface -->
+      <polygon points="100,0 150,200 50,200" fill="#87ceeb" opacity="0.05"/>
+      <polygon points="200,0 270,250 130,250" fill="#87ceeb" opacity="0.05"/>
+      <polygon points="350,0 420,180 280,180" fill="#87ceeb" opacity="0.04"/>
+      
+      <!-- Waves -->
+      <path d="M 0 320 Q 75 290, 150 320 T 300 320 T 450 320 L 450 450 L 0 450 Z" fill="url(#waveGradient1)" opacity="0.4"/>
+      <path d="M 0 350 Q 75 320, 150 350 T 300 350 T 450 350 L 450 450 L 0 450 Z" fill="#0066cc" opacity="0.3"/>
+      <path d="M 0 380 Q 75 350, 150 380 T 300 380 T 450 380 L 450 450 L 0 450 Z" fill="#003366" opacity="0.5"/>
+      
+      <!-- Bubbles -->
+      <circle cx="127.0956331724511" cy="109.6206876794887" r="6.7852308163752575" fill="url(#bubbleGradient)" opacity="0.33876729791131044"/>
+      <circle cx="265.3658256361485" cy="379.0793842517455" r="8.270278808988184" fill="url(#bubbleGradient)" opacity="0.5433008486794497"/>
+      <circle cx="145.6189271313498" cy="189.55763060234779" r="10.0815438172156" fill="url(#bubbleGradient)" opacity="0.5908878484474815"/>
+      <circle cx="184.15715646357268" cy="304.12040453185045" r="7.312516458139827" fill="url(#bubbleGradient)" opacity="0.5478794564568747"/>
+      <circle cx="357.0443868918973" cy="229.31059810738736" r="10.349648780807689" fill="url(#bubbleGradient)" opacity="0.5597697442695111"/>
+      <circle cx="76.89514984847597" cy="303.31238797373595" r="5.568249577301414" fill="url(#bubbleGradient)" opacity="0.5831765194267255"/>
+      <circle cx="403.3020177928355" cy="285.0002386115906" r="8.235544950836458" fill="url(#bubbleGradient)" opacity="0.42610009515219344"/>
+      <circle cx="107.70254206167769" cy="224.28687117177952" r="10.692618998857007" fill="url(#bubbleGradient)" opacity="0.5465006474215738"/>
+      <circle cx="218.5605675066844" cy="313.7989186203946" r="10.957947921793902" fill="url(#bubbleGradient)" opacity="0.4614523380084671"/>
+      <circle cx="323.54154119019717" cy="375.3822904171755" r="10.220519732239353" fill="url(#bubbleGradient)" opacity="0.5218722224351033"/>
+      <circle cx="298.5448609808106" cy="299.2508572867413" r="4.3531038103714295" fill="url(#bubbleGradient)" opacity="0.37176646825816057"/>
+      <circle cx="339.3395214456854" cy="354.9974855061231" r="10.869564933340277" fill="url(#bubbleGradient)" opacity="0.31783034375636954"/>
+      <circle cx="37.857900653626245" cy="114.02188362241203" r="9.740634756144894" fill="url(#bubbleGradient)" opacity="0.35127333338939004"/>
+      <circle cx="33.15499766876569" cy="384.884664641883" r="4.460884901199666" fill="url(#bubbleGradient)" opacity="0.5464880467198903"/>
+      <circle cx="282.27261589670763" cy="258.2463675019827" r="10.303695477912225" fill="url(#bubbleGradient)" opacity="0.34433785432396136"/>
+      
+      <!-- Clock face (bubble-like) -->
+      <circle cx="225" cy="225" r="150" fill="rgba(0,51,102,0.6)" stroke="#87ceeb" stroke-width="2" opacity="0.8"/>
+      <circle cx="225" cy="225" r="145" fill="none" stroke="#00ffff" stroke-width="1" opacity="0.5"/>
+      
+      <!-- Hour markers (shell-like) -->
+      <line x1="225" y1="90" x2="225" y2="105" stroke="#87ceeb" stroke-width="4" stroke-linecap="round"/>
+  <line x1="292.5" y1="108.0865704891008" x2="285" y2="121.07695154586737" stroke="#87ceeb" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+  <line x1="341.9134295108992" y1="157.5" x2="328.92304845413264" y2="165" stroke="#87ceeb" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+  <line x1="360" y1="225" x2="345" y2="225" stroke="#87ceeb" stroke-width="4" stroke-linecap="round"/>
+  <line x1="341.9134295108992" y1="292.5" x2="328.92304845413264" y2="285" stroke="#87ceeb" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+  <line x1="292.5" y1="341.9134295108992" x2="285" y2="328.92304845413264" stroke="#87ceeb" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+  <line x1="225" y1="360" x2="225" y2="345" stroke="#87ceeb" stroke-width="4" stroke-linecap="round"/>
+  <line x1="157.50000000000003" y1="341.9134295108992" x2="165.00000000000003" y2="328.92304845413264" stroke="#87ceeb" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+  <line x1="108.08657048910078" y1="292.5" x2="121.07695154586736" y2="285" stroke="#87ceeb" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+  <line x1="90" y1="225.00000000000003" x2="105" y2="225.00000000000003" stroke="#87ceeb" stroke-width="4" stroke-linecap="round"/>
+  <line x1="108.0865704891008" y1="157.5" x2="121.07695154586737" y2="165" stroke="#87ceeb" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+  <line x1="157.49999999999994" y1="108.08657048910081" x2="164.99999999999994" y2="121.07695154586739" stroke="#87ceeb" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+      
+      <!-- Hour numbers -->
+      <text x="225" y="120" fill="#87ceeb" font-size="22" text-anchor="middle" dominant-baseline="middle" font-weight="bold">12</text>
+      <text x="330" y="225" fill="#87ceeb" font-size="22" text-anchor="middle" dominant-baseline="middle" font-weight="bold">3</text>
+      <text x="225" y="330" fill="#87ceeb" font-size="22" text-anchor="middle" dominant-baseline="middle" font-weight="bold">6</text>
+      <text x="120" y="225" fill="#87ceeb" font-size="22" text-anchor="middle" dominant-baseline="middle" font-weight="bold">9</text>
+      
+      <!-- Clock hands -->
+      
+    <line x1="225" y1="225" x2="287.6086525481931" y2="175.19882906899045" stroke="#87ceeb" stroke-width="8" stroke-linecap="round"/>
+    <line x1="225" y1="225" x2="116.26567245104482" y2="241.63869022719422" stroke="#87ceeb" stroke-width="4" stroke-linecap="round"/>
+    <line x1="225" y1="225" x2="184.82779073125684" y2="348.63734711837" stroke="#00ffff" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="225" cy="225" r="10" fill="#00ffff" stroke="#ffffff" stroke-width="2" opacity="1"/>
+  
+      
+      <!-- Depth indicator -->
+      <text x="50" y="420" fill="#87ceeb" font-size="12" opacity="0.6" font-family="'Courier New', monospace">
+        DEPTH: 42m
+      </text>
+    
+</svg>

@@ -1,0 +1,29 @@
+{
+  "name": "Somnal Watchface",
+  "version": "1.0.0",
+  "package": "com.somnal.watchface",
+  "description": "Custom watchface for Galaxy Watch",
+  "author": "Somnal",
+  "icons": {
+    "128": "icon128.png",
+    "512": "icon512.png"
+  },
+  "wearable": {
+    "type": "watchface",
+    "platform": ["wearable"],
+    "preview": {
+      "type": "circular",
+      "width": 360,
+      "height": 360
+    }
+  },
+  "permissions": [
+    "http://tizen.org/privilege/alarm",
+    "http://tizen.org/privilege/healthinfo",
+    "http://tizen.org/privilege/callhistory"
+  ],
+  "settings": {
+    "colorSchemes": true,
+    "complications": true
+  }
+}

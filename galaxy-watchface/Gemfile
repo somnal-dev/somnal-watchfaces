@@ -1,0 +1,7 @@
+source "https://rubygems.org"
+
+gem "fastlane"
+gem "fastlane-plugin-samsung_galaxy_store" rescue nil
+
+# Optional: For Android/Wear OS builds
+# gem "gradle", "~> 0.1"
