@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Somnal Watchface Factory</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      min-height: 100vh;
+      color: #fff;
+    }
+    
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    header {
+      text-align: center;
+      padding: 40px 20px;
+    }
+    
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      background: linear-gradient(90deg, #e94560, #0f3460);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    header p {
+      color: #888;
+      font-size: 1.1rem;
+    }
+    
+    .tabs {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    
+    .tab {
+      padding: 10px 20px;
+      background: rgba(255,255,255,0.1);
+      border: none;
+      color: #fff;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    
+    .tab:hover, .tab.active {
+      background: #e94560;
+    }
+    
+    .section {
+      margin-bottom: 40px;
+    }
+    
+    .section h2 {
+      margin-bottom: 20px;
+      font-size: 1.5rem;
+    }
+    
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    
+    .card {
+      background: rgba(255,255,255,0.05);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(233, 69, 96, 0.2);
+    }
+    
+    .card-preview {
+      width: 100%;
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #000;
+    }
+    
+    .card-preview svg {
+      max-width: 100%;
+      max-height: 100%;
+    }
+    
+    .card-info {
+      padding: 15px;
+    }
+    
+    .card-info h3 {
+      margin-bottom: 5px;
+      font-size: 1.1rem;
+    }
+    
+    .card-info p {
+      color: #888;
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+    }
+    
+    .card-info .category {
+      display: inline-block;
+      padding: 3px 10px;
+      background: rgba(233, 69, 96, 0.3);
+      border-radius: 10px;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 8px 16px;
+      background: #e94560;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      margin-top: 10px;
+      margin-right: 5px;
+      transition: background 0.3s;
+    }
+    
+    .btn:hover {
+      background: #c73e54;
+    }
+    
+    .btn-secondary {
+      background: rgba(255,255,255,0.1);
+    }
+    
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.2);
+    }
+    
+    /* Generator Form */
+    .generator {
+      background: rgba(255,255,255,0.05);
+      border-radius: 16px;
+      padding: 30px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+    
+    .form-group select,
+    .form-group input[type="text"],
+    .form-group input[type="color"] {
+      width: 100%;
+      padding: 12px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 8px;
+      color: #fff;
+      font-size: 1rem;
+    }
+    
+    .form-group select option {
+      background: #1a1a2e;
+    }
+    
+    .color-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+    
+    .color-input {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .color-input input[type="color"] {
+      width: 50px;
+      height: 40px;
+      padding: 2px;
+      cursor: pointer;
+    }
+    
+    .color-input input[type="text"] {
+      flex: 1;
+    }
+    
+    .preview-result {
+      margin-top: 30px;
+      text-align: center;
+    }
+    
+    .preview-result svg {
+      max-width: 300px;
+      border-radius: 50%;
+      box-shadow: 0 0 30px rgba(233, 69, 96, 0.3);
+    }
+    
+    .loading {
+      text-align: center;
+      padding: 40px;
+      color: #888;
+    }
+    
+    .toast {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 15px 25px;
+      background: #4caf50;
+      color: #fff;
+      border-radius: 8px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.3s;
+    }
+    
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .toast.error {
+      background: #f44336;
+    }
+    
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+      
+      .grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      }
+      
+      .generator {
+        padding: 20px;
+      }
+      
+      .color-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🎨 Somnal Watchface Factory</h1>
+      <p>워치페이스 디자인 자동 생성 시스템</p>
+    </header>
+    
+    <div class="tabs">
+      <button class="tab active" onclick="showSection('templates')">템플릿</button>
+      <button class="tab" onclick="showSection('generator')">생성기</button>
+      <button class="tab" onclick="showSection('gallery')">갤러리</button>
+      <button class="tab" onclick="generateAll()">전체 생성</button>
+    </div>
+    
+    <!-- Templates Section -->
+    <section id="templates-section" class="section">
+      <h2>📋 템플릿 목록</h2>
+      <div id="templates-grid" class="grid">
+        <div class="loading">로딩 중...</div>
+      </div>
+    </section>
+    
+    <!-- Generator Section -->
+    <section id="generator-section" class="section" style="display: none;">
+      <h2>⚙️ 워치페이스 생성기</h2>
+      <div class="generator">
+        <div class="form-group">
+          <label>템플릿 선택</label>
+          <select id="template-select">
+            <option value="">로딩 중...</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label>이름</label>
+          <input type="text" id="watchface-name" placeholder="워치페이스 이름">
+        </div>
+        
+        <div class="form-group">
+          <label>색상 설정</label>
+          <div class="color-grid" id="color-inputs">
+            <!-- Dynamic color inputs -->
+          </div>
+        </div>
+        
+        <button class="btn" onclick="generateWatchface()">생성하기</button>
+        <button class="btn btn-secondary" onclick="resetForm()">초기화</button>
+        
+        <div class="preview-result" id="preview-result" style="display: none;">
+          <h3>미리보기</h3>
+          <div id="preview-svg"></div>
+          <br>
+          <button class="btn" onclick="downloadCurrent()">다운로드</button>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Gallery Section -->
+    <section id="gallery-section" class="section" style="display: none;">
+      <h2>🖼️ 생성된 워치페이스</h2>
+      <div id="gallery-grid" class="grid">
+        <div class="loading">로딩 중...</div>
+      </div>
+    </section>
+  </div>
+  
+  <div class="toast" id="toast"></div>
+  
+  <script>
+    const API = '/api';
+    let templates = [];
+    let currentWatchface = null;
+    
+    // Initialize
+    document.addEventListener('DOMContentLoaded', async () => {
+      await loadTemplates();
+      await loadGallery();
+    });
+    
+    // Show section
+    function showSection(name) {
+      document.querySelectorAll('.section').forEach(s => s.style.display = 'none');
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      
+      document.getElementById(`${name}-section`).style.display = 'block';
+      event.target.classList.add('active');
+    }
+    
+    // Load templates
+    async function loadTemplates() {
+      try {
+        const res = await fetch(`${API}/templates`);
+        const data = await res.json();
+        templates = data.data;
+        
+        renderTemplates();
+        populateTemplateSelect();
+      } catch (err) {
+        showToast('템플릿 로드 실패', true);
+      }
+    }
+    
+    // Render templates grid
+    function renderTemplates() {
+      const grid = document.getElementById('templates-grid');
+      grid.innerHTML = templates.map(t => `
+        <div class="card">
+          <div class="card-preview">
+            <div style="color: #888; text-align: center; padding: 20px;">
+              <div style="font-size: 48px; margin-bottom: 10px;">⌚</div>
+              <div>${t.name}</div>
+            </div>
+          </div>
+          <div class="card-info">
+            <h3>${t.name}</h3>
+            <p>${t.description}</p>
+            <span class="category">${t.category}</span>
+            <br>
+            <button class="btn" onclick="selectTemplate('${t.id}')">선택</button>
+            <button class="btn btn-secondary" onclick="quickGenerate('${t.id}')">빠른 생성</button>
+          </div>
+        </div>
+      `).join('');
+    }
+    
+    // Populate template select
+    function populateTemplateSelect() {
+      const select = document.getElementById('template-select');
+      select.innerHTML = templates.map(t => 
+        `<option value="${t.id}">${t.name} (${t.category})</option>`
+      ).join('');
+      
+      select.addEventListener('change', updateColorInputs);
+      updateColorInputs();
+    }
+    
+    // Update color inputs based on template
+    function updateColorInputs() {
+      const templateId = document.getElementById('template-select').value;
+      const template = templates.find(t => t.id === templateId);
+      
+      if (!template) return;
+      
+      const container = document.getElementById('color-inputs');
+      container.innerHTML = Object.entries(template.defaultColors).map(([key, value]) => `
+        <div class="color-input">
+          <input type="color" id="color-${key}" value="${value}" onchange="updateColorText('${key}')">
+          <input type="text" id="color-${key}-text" value="${value}" onchange="updateColorPicker('${key}')">
+          <label>${key}</label>
+        </div>
+      `).join('');
+    }
+    
+    function updateColorText(key) {
+      const color = document.getElementById(`color-${key}`).value;
+      document.getElementById(`color-${key}-text`).value = color;
+    }
+    
+    function updateColorPicker(key) {
+      const text = document.getElementById(`color-${key}-text`).value;
+      if (/^#[0-9A-Fa-f]{6}$/.test(text)) {
+        document.getElementById(`color-${key}`).value = text;
+      }
+    }
+    
+    // Select template (go to generator)
+    function selectTemplate(id) {
+      showSection('generator');
+      document.querySelectorAll('.tab')[1].classList.add('active');
+      document.querySelectorAll('.tab')[0].classList.remove('active');
+      document.getElementById('template-select').value = id;
+      updateColorInputs();
+    }
+    
+    // Quick generate
+    async function quickGenerate(templateId) {
+      try {
+        const res = await fetch(`${API}/watchfaces/generate`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ templateId })
+        });
+        
+        const data = await res.json();
+        
+        if (data.success) {
+          showToast('워치페이스 생성 완료!');
+          loadGallery();
+        } else {
+          showToast(data.error, true);
+        }
+      } catch (err) {
+        showToast('생성 실패', true);
+      }
+    }
+    
+    // Generate watchface
+    async function generateWatchface() {
+      const templateId = document.getElementById('template-select').value;
+      const name = document.getElementById('watchface-name').value;
+      
+      const template = templates.find(t => t.id === templateId);
+      const colors = {};
+      
+      Object.keys(template.defaultColors).forEach(key => {
+        colors[key] = document.getElementById(`color-${key}-text`).value;
+      });
+      
+      try {
+        const res = await fetch(`${API}/watchfaces/generate`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ templateId, name, colors })
+        });
+        
+        const data = await res.json();
+        
+        if (data.success) {
+          currentWatchface = data.data;
+          
+          // Load and show preview
+          const svgRes = await fetch(data.data.svgUrl);
+          const svg = await svgRes.text();
+          document.getElementById('preview-svg').innerHTML = svg;
+          document.getElementById('preview-result').style.display = 'block';
+          
+          showToast('워치페이스 생성 완료!');
+          loadGallery();
+        } else {
+          showToast(data.error, true);
+        }
+      } catch (err) {
+        showToast('생성 실패', true);
+      }
+    }
+    
+    // Generate all templates
+    async function generateAll() {
+      showToast('전체 템플릿 생성 중...');
+      
+      try {
+        const res = await fetch(`${API}/generate-all`, { method: 'POST' });
+        const data = await res.json();
+        
+        if (data.success) {
+          showToast(`${data.data.filter(r => r.success).length}개 생성 완료!`);
+          loadGallery();
+        }
+      } catch (err) {
+        showToast('생성 실패', true);
+      }
+    }
+    
+    // Load gallery
+    async function loadGallery() {
+      try {
+        const res = await fetch(`${API}/watchfaces`);
+        const data = await res.json();
+        
+        const grid = document.getElementById('gallery-grid');
+        
+        if (data.data.length === 0) {
+          grid.innerHTML = '<div class="loading">아직 생성된 워치페이스가 없습니다</div>';
+          return;
+        }
+        
+        grid.innerHTML = data.data.map(w => `
+          <div class="card">
+            <div class="card-preview">
+              <img src="${API}/watchfaces/${w.id}/svg" alt="${w.name}" style="max-width: 100%; max-height: 100%;">
+            </div>
+            <div class="card-info">
+              <h3>${w.name}</h3>
+              <p>${new Date(w.createdAt).toLocaleDateString()}</p>
+              <span class="category">${w.category}</span>
+              <br>
+              <button class="btn" onclick="downloadWatchface('${w.id}')">다운로드</button>
+              <button class="btn btn-secondary" onclick="deleteWatchface('${w.id}')">삭제</button>
+            </div>
+          </div>
+        `).join('');
+      } catch (err) {
+        console.error(err);
+      }
+    }
+    
+    // Download watchface
+    function downloadWatchface(id) {
+      window.open(`${API}/watchfaces/${id}/download`, '_blank');
+    }
+    
+    // Download current preview
+    function downloadCurrent() {
+      if (currentWatchface) {
+        downloadWatchface(currentWatchface.id);
+      }
+    }
+    
+    // Delete watchface
+    async function deleteWatchface(id) {
+      if (!confirm('정말 삭제하시겠습니까?')) return;
+      
+      try {
+        await fetch(`${API}/watchfaces/${id}`, { method: 'DELETE' });
+        showToast('삭제 완료');
+        loadGallery();
+      } catch (err) {
+        showToast('삭제 실패', true);
+      }
+    }
+    
+    // Reset form
+    function resetForm() {
+      document.getElementById('watchface-name').value = '';
+      updateColorInputs();
+      document.getElementById('preview-result').style.display = 'none';
+      currentWatchface = null;
+    }
+    
+    // Toast notification
+    function showToast(message, isError = false) {
+      const toast = document.getElementById('toast');
+      toast.textContent = message;
+      toast.className = `toast show ${isError ? 'error' : ''}`;
+      
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3000);
+    }
+  </script>
+</body>
+</html>

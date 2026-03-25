@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 450" width="450" height="450">
+  <defs>
+    
+  </defs>
+  <rect width="450" height="450" fill="#1a2f1a"/>
+  
+      <defs>
+        <radialGradient id="forestGlow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#228b22" stop-opacity="0.3"/>
+          <stop offset="100%" stop-color="transparent"/>
+        </radialGradient>
+        <linearGradient id="leafGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#90ee90"/>
+          <stop offset="100%" stop-color="#006400"/>
+        </linearGradient>
+      </defs>
+      
+      <!-- Forest background -->
+      <rect width="450" height="450" fill="#1a2f1a"/>
+      
+      <!-- Dappled light effect -->
+      <circle cx="252.26105733813267" cy="404.3193792224255" r="39.82656533496698" fill="#90ee90" opacity="0.05"/>
+      <circle cx="330.37573384423035" cy="175.31618431715367" r="56.70881885430504" fill="#90ee90" opacity="0.05"/>
+      <circle cx="222.49736575887925" cy="276.91079186267666" r="28.607773339204474" fill="#90ee90" opacity="0.05"/>
+      <circle cx="88.6685249518048" cy="423.37245370495873" r="37.20920429403145" fill="#90ee90" opacity="0.05"/>
+      <circle cx="177.74820049877212" cy="118.3383562349407" r="44.03459913422274" fill="#90ee90" opacity="0.05"/>
+      <circle cx="240.15990120631915" cy="311.87570839554877" r="34.23964211778153" fill="#90ee90" opacity="0.05"/>
+      <circle cx="147.4604433199162" cy="157.6606872687865" r="28.27540007060998" fill="#90ee90" opacity="0.05"/>
+      <circle cx="157.13554406569497" cy="169.58261671181393" r="47.30544401043666" fill="#90ee90" opacity="0.05"/>
+      
+      <!-- Decorative leaves -->
+      <g transform="translate(50, 50) rotate(-30)">
+        <ellipse cx="0" cy="0" rx="30" ry="15" fill="#228b22" opacity="0.6"/>
+        <line x1="-25" y1="0" x2="25" y2="0" stroke="#006400" stroke-width="1"/>
+      </g>
+      <g transform="translate(400, 80) rotate(45)">
+        <ellipse cx="0" cy="0" rx="25" ry="12" fill="#228b22" opacity="0.5"/>
+        <line x1="-20" y1="0" x2="20" y2="0" stroke="#006400" stroke-width="1"/>
+      </g>
+      <g transform="translate(380, 380) rotate(15)">
+        <ellipse cx="0" cy="0" rx="35" ry="18" fill="#228b22" opacity="0.5"/>
+        <line x1="-30" y1="0" x2="30" y2="0" stroke="#006400" stroke-width="1"/>
+      </g>
+      <g transform="translate(70, 350) rotate(-45)">
+        <ellipse cx="0" cy="0" rx="28" ry="14" fill="#228b22" opacity="0.55"/>
+        <line x1="-23" y1="0" x2="23" y2="0" stroke="#006400" stroke-width="1"/>
+      </g>
+      
+      <!-- Central glow -->
+      <circle cx="225" cy="225" r="180" fill="url(#forestGlow)"/>
+      
+      <!-- Clock face -->
+      <circle cx="225" cy="225" r="155" fill="rgba(26,47,26,0.8)" stroke="#90ee90" stroke-width="2"/>
+      <circle cx="225" cy="225" r="145" fill="none" stroke="#228b22" stroke-width="1" opacity="0.5"/>
+      
+      <!-- Vine-like markers -->
+      <line x1="225" y1="85" x2="225" y2="100" stroke="#90ee90" stroke-width="3" stroke-linecap="round"/>
+                  <circle cx="225" cy="85" r="4" fill="#ffd700" opacity="0.7"/>
+      <line x1="295" y1="103.7564434701786" x2="287.5" y2="116.74682452694518" stroke="#90ee90" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+      <line x1="346.24355652982143" y1="155" x2="333.25317547305485" y2="162.5" stroke="#90ee90" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+      <line x1="365" y1="225" x2="350" y2="225" stroke="#90ee90" stroke-width="3" stroke-linecap="round"/>
+                  <circle cx="365" cy="225" r="4" fill="#ffd700" opacity="0.7"/>
+      <line x1="346.24355652982143" y1="295" x2="333.25317547305485" y2="287.5" stroke="#90ee90" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+      <line x1="295" y1="346.2435565298214" x2="287.5" y2="333.25317547305485" stroke="#90ee90" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+      <line x1="225" y1="365" x2="225" y2="350" stroke="#90ee90" stroke-width="3" stroke-linecap="round"/>
+                  <circle cx="225" cy="365" r="4" fill="#ffd700" opacity="0.7"/>
+      <line x1="155.00000000000003" y1="346.24355652982143" x2="162.50000000000003" y2="333.25317547305485" stroke="#90ee90" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+      <line x1="103.75644347017858" y1="295" x2="116.74682452694516" y2="287.5" stroke="#90ee90" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+      <line x1="85" y1="225.00000000000003" x2="100" y2="225.00000000000003" stroke="#90ee90" stroke-width="3" stroke-linecap="round"/>
+                  <circle cx="85" cy="225.00000000000003" r="4" fill="#ffd700" opacity="0.7"/>
+      <line x1="103.7564434701786" y1="155" x2="116.74682452694518" y2="162.5" stroke="#90ee90" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+      <line x1="154.99999999999994" y1="103.75644347017861" x2="162.49999999999994" y2="116.74682452694519" stroke="#90ee90" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+      
+      <!-- Hour numbers (nature font style) -->
+      <text x="225" y="120" fill="#90ee90" font-size="18" text-anchor="middle" dominant-baseline="middle">12</text>
+      <text x="330" y="225" fill="#90ee90" font-size="18" text-anchor="middle" dominant-baseline="middle">3</text>
+      <text x="225" y="330" fill="#90ee90" font-size="18" text-anchor="middle" dominant-baseline="middle">6</text>
+      <text x="120" y="225" fill="#90ee90" font-size="18" text-anchor="middle" dominant-baseline="middle">9</text>
+      
+      <!-- Clock hands -->
+      
+    <line x1="225" y1="225" x2="283.5082961295336" y2="170.4401311950001" stroke="#90ee90" stroke-width="8" stroke-linecap="round"/>
+    <line x1="225" y1="225" x2="179.55851271930035" y2="325.17520268867946" stroke="#90ee90" stroke-width="4" stroke-linecap="round"/>
+    <line x1="225" y1="225" x2="277.87576359985405" y2="106.23909050646189" stroke="#ffd700" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="225" cy="225" r="10" fill="#ffd700" stroke="#ffffff" stroke-width="2" opacity="1"/>
+  
+      
+      <!-- Small decorative elements -->
+      <circle cx="165" cy="305" r="8" fill="#228b22" opacity="0.4"/>
+      <circle cx="295" cy="155" r="6" fill="#228b22" opacity="0.3"/>
+    
+</svg>

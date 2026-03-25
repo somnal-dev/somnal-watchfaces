@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 450" width="450" height="450">
+  <defs>
+    
+  </defs>
+  <rect width="450" height="450" fill="#0a0a0a"/>
+  
+      <defs>
+        <filter id="neonGlow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"/>
+          <feMerge>
+            <feMergeNode in="blur"/>
+            <feMergeNode in="blur"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
+        <linearGradient id="scanline" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="transparent"/>
+          <stop offset="50%" stop-color="#00ffff" stop-opacity="0.03"/>
+          <stop offset="100%" stop-color="transparent"/>
+        </linearGradient>
+      </defs>
+      
+      <!-- Grid background -->
+      <line x1="50" y1="0" x2="50" y2="450" stroke="#00ffff" stroke-width="0.5" opacity="0.1"/>
+      <line x1="100" y1="0" x2="100" y2="450" stroke="#00ffff" stroke-width="0.5" opacity="0.1"/>
+      <line x1="150" y1="0" x2="150" y2="450" stroke="#00ffff" stroke-width="0.5" opacity="0.1"/>
+      <line x1="200" y1="0" x2="200" y2="450" stroke="#00ffff" stroke-width="0.5" opacity="0.1"/>
+      <line x1="250" y1="0" x2="250" y2="450" stroke="#00ffff" stroke-width="0.5" opacity="0.1"/>
+      <line x1="300" y1="0" x2="300" y2="450" stroke="#00ffff" stroke-width="0.5" opacity="0.1"/>
+      <line x1="350" y1="0" x2="350" y2="450" stroke="#00ffff" stroke-width="0.5" opacity="0.1"/>
+      <line x1="400" y1="0" x2="400" y2="450" stroke="#00ffff" stroke-width="0.5" opacity="0.1"/>
+      <line x1="450" y1="0" x2="450" y2="450" stroke="#00ffff" stroke-width="0.5" opacity="0.1"/>
+      <line x1="0" y1="50" x2="450" y2="50" stroke="#00ffff" stroke-width="0.5" opacity="0.1"/>
+      <line x1="0" y1="100" x2="450" y2="100" stroke="#00ffff" stroke-width="0.5" opacity="0.1"/>
+      <line x1="0" y1="150" x2="450" y2="150" stroke="#00ffff" stroke-width="0.5" opacity="0.1"/>
+      <line x1="0" y1="200" x2="450" y2="200" stroke="#00ffff" stroke-width="0.5" opacity="0.1"/>
+      <line x1="0" y1="250" x2="450" y2="250" stroke="#00ffff" stroke-width="0.5" opacity="0.1"/>
+      <line x1="0" y1="300" x2="450" y2="300" stroke="#00ffff" stroke-width="0.5" opacity="0.1"/>
+      <line x1="0" y1="350" x2="450" y2="350" stroke="#00ffff" stroke-width="0.5" opacity="0.1"/>
+      <line x1="0" y1="400" x2="450" y2="400" stroke="#00ffff" stroke-width="0.5" opacity="0.1"/>
+      <line x1="0" y1="450" x2="450" y2="450" stroke="#00ffff" stroke-width="0.5" opacity="0.1"/>
+      
+      <!-- Hexagonal frame -->
+      <polygon points="225,30 400,110 400,340 225,420 50,340 50,110" 
+               fill="none" stroke="#00ffff" stroke-width="3" filter="url(#neonGlow)"/>
+      <polygon points="225,50 380,120 380,330 225,400 70,330 70,120" 
+               fill="none" stroke="#ff00ff" stroke-width="1" opacity="0.5"/>
+      
+      <!-- Main time display -->
+      <g filter="url(#neonGlow)">
+        <text x="225" y="180" fill="#00ffff" font-size="80" font-family="'Courier New', monospace" font-weight="bold" text-anchor="middle" dominant-baseline="middle">01:34</text>
+      </g>
+      
+      <!-- Seconds display -->
+      <text x="225" y="230" fill="#ff00ff" font-size="28" 
+            text-anchor="middle" font-family="'Courier New', monospace" filter="url(#neonGlow)">
+        :04
+      </text>
+      
+      <!-- Date display -->
+      <text x="225" y="280" fill="#00ffff" font-size="18" 
+            text-anchor="middle" font-family="'Courier New', monospace" opacity="0.8">
+        THU, MAR 26
+      </text>
+      
+      <!-- Status indicators -->
+      <g transform="translate(225, 330)">
+        <rect x="-80" y="-15" width="160" height="30" fill="none" stroke="#ff00ff" stroke-width="1" rx="5"/>
+        <text x="0" y="5" fill="#ff00ff" font-size="12" text-anchor="middle" font-family="'Courier New', monospace">
+          BLUETOOTH • WIFI
+        </text>
+      </g>
+      
+      <!-- Decorative elements -->
+      <circle cx="100" cy="100" r="30" fill="none" stroke="#00ffff" stroke-width="1" opacity="0.3"/>
+      <circle cx="350" cy="350" r="30" fill="none" stroke="#ff00ff" stroke-width="1" opacity="0.3"/>
+      
+      <!-- Scanline effect -->
+      <rect width="450" height="450" fill="url(#scanline)" opacity="0.5"/>
+    
+</svg>
